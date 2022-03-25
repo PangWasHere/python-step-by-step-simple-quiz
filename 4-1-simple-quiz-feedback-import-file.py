@@ -1,17 +1,21 @@
+## (4.1) Simple Quiz - Feedback - Import File
 ## This is a very basic program that tests the user's English vocabulary.
-## It only contains print() and input() functions. It introduces if conditions, while and for loops, and lists.
+## This lesson introduces importing files and variables withing Python files.
 ## The quiz will not continue until the user gets the answer correct.
-## Students will be introduced in:
+## Please refer to 4-2-simple-quiz-scored-import-file for the scored version.
+## Before this lesson, students already understand:
 ##   - showing output through print()
+##   - string concatenation
 ##   - taking (keyboard) input from user through input()
 ##   - variables
 ##   - if conditions
-##   - while and for loops
-##   - escape characters
+##   - comparison operators (== and !=)
+##   - loops
 ##   - lists
-##   - loading external file
+## Students will be introduced in:
+##   - import
 
-from listQuestions import questions
+from questionslist import questions
 
 # Introduction
 print("Test your English vocabulary!")
@@ -28,7 +32,7 @@ for question in questions:
         answer = input("Not quite.. Try again: ")
         
     if(answer == question['answer']):
-           print("Correct!")
+        print("Correct!")
 
 print("*********************************************")        
 print("You've finished the quiz. Congratulations!")

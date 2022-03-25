@@ -1,23 +1,26 @@
+## (5.1) Simple Quiz - Feedback - Classes
 ## This is a very basic program that tests the user's English vocabulary.
-## It only contains print() and input() functions. It introduces if conditions, while and for loops, and lists.
+## This lesson introduces classes.
 ## The quiz will not continue until the user gets the answer correct.
-## Students will be introduced in:
+## Please refer to 5-2-simple-quiz-scored-classes for the scored version.
+## Before this lesson, students already understand:
 ##   - showing output through print()
+##   - string concatenation
 ##   - taking (keyboard) input from user through input()
 ##   - variables
 ##   - if conditions
-##   - while and for loops
-##   - escape characters
+##   - comparison operators (== and !=)
+##   - loops
 ##   - lists
+##   - import
+## Students will be introduced in:
 ##   - classes
 
-from Question import Question
-
-##class Question:
-##    def __init__(self, word, choices, answer):
-##        self.word = word
-##        self.choices = choices
-##        self.answer = answer
+class Question:
+   def __init__(self, word, choices, answer):
+       self.word = word
+       self.choices = choices
+       self.answer = answer
 
 # Initialize values
 questions = [
@@ -48,7 +51,7 @@ for question in questions:
         answer = input("Not quite.. Try again: ")
         
     if(answer == question.answer):
-           print("Correct!\n")
+        print("Correct!\n")
 
 print("*******************************************")         
 print("You've finished the quiz. Congratulations!")

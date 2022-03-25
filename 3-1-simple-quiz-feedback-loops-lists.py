@@ -1,19 +1,24 @@
+## (3.1) Simple Quiz - Feedback - For Loops and Lists/Dictionary
 ## This is a very basic program that tests the user's English vocabulary.
-## It only contains print() and input() functions. It introduces if conditions, while and for loops, and lists.
-## The quiz is scored and will not give any feedback.
-## Students will be introduced in:
+## This lesson  introduces for loops, lists and dictionaries (advanced).
+## The quiz will not continue until the user gets the answer correct.
+## Please refer to 3-2-simple-quiz-scored-loops-lists for the scored version.
+## Before this lesson, students already understand:
 ##   - showing output through print()
+##   - string concatenation
 ##   - taking (keyboard) input from user through input()
 ##   - variables
 ##   - if conditions
-##   - while and for loops
-##   - escape characters
+##   - comparison operators (== and !=)
+##   - while loops
+## Students will be introduced in:
+##   - for loops
 ##   - lists
+## Advanced topics:
+##   - dictionaries
 
 
 # Introduction
-score = 0
-
 print("Test your English vocabulary!")
 name = input("What is your name? ")
 print("\nWelcome " + name + "! Here's your first question:")
@@ -76,12 +81,15 @@ for question in questions:
     print("\nWhich word means \"" + question['word'] + "\"?")
     print(question['choices'])
     answer = input("Enter your guess: ")
+
+    while(answer != question['answer']):
+        answer = input("Not quite.. Try again: ")
         
     if(answer == question['answer']):
-           score += 1
+        print("Correct!")
 
-print("*********************************************")
-print("You've finished the quiz. You got " + str(score) + " out of 10!")
+print("*********************************************")    
+print("You've finished the quiz. Congratulations!")
 
 # Prevents the app from closing prematurely  
 exit = input("Press ENTER to exit...")
