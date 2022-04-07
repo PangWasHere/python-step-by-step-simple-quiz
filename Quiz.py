@@ -7,6 +7,17 @@ class Quiz:
         self.count = count
         self.score = 0
 
+    def validateAnswer(self, user_input):
+        valid = True
+
+        # Only accept numbers as a valid answer
+        if not user_input.isdigit():
+            valid = False
+            user_input = input("Seems like you didn't input a number. Try again: ")
+            self.validateAnswer(user_input)
+
+        return valid
+
     def startQuiz(self):
         if(self.arithmetic_operation == "a"):
             self.lauchAdditionQuiz()
@@ -18,16 +29,18 @@ class Quiz:
             self.launchDivisionQuiz()
 
     def lauchAdditionQuiz(self):
-        for i in range(self.count):
+        for _ in range(self.count):
             first_number = random.randint(1,100)
             second_number = random.randint(1,100)
             answer = first_number + second_number
             user_answer = input(str(first_number) + " + " + str(second_number) + " = ")
 
+            self.validateAnswer(user_answer)
+
             self.showAnswer(user_answer, answer)
 
     def launchSubtractionQuiz(self):
-        for i in range(self.count):
+        for _ in range(self.count):
             first_number = random.randint(20,100)
             second_number = random.randint(20,100)
 
@@ -38,19 +51,23 @@ class Quiz:
             answer = first_number - second_number
             user_answer = input(str(first_number) + " - " + str(second_number) + " = ")
 
+            self.validateAnswer(user_answer)
+
             self.showAnswer(user_answer, answer)
 
     def launchMultiplicationQuiz(self):
-        for i in range(self.count):
-            first_number = random.randint(1,20)
-            second_number = random.randint(1,20)
+        for _ in range(self.count):
+            first_number = random.randint(2,20)
+            second_number = random.randint(2,20)
             answer = first_number * second_number
             user_answer = input(str(first_number) + " x " + str(second_number) + " = ")
+
+            self.validateAnswer(user_answer)
 
             self.showAnswer(user_answer, answer)
 
     def launchDivisionQuiz(self):
-        for i in range(self.count):
+        for _ in range(self.count):
             first_number = random.randint(20,500)
             second_number = random.randint(1,100)
 
@@ -60,6 +77,8 @@ class Quiz:
 
             answer = int(first_number / second_number)
             user_answer = input(str(first_number) + " / " + str(second_number) + " = ")
+
+            self.validateAnswer(user_answer)
 
             self.showAnswer(user_answer, answer)
 
