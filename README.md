@@ -7,9 +7,9 @@ This resource is created for learners who are new to programming and want to use
 It is recommended that you follow the lesson order, especially if this is your first time programming.
 
 ## Lessons
-1. [Output with print()](/pages/lessons/1_Output_with_print)
+1. [Output with print()](/pages/lessons/1_Output_with_print.md)
 2. [String Concatenation](/pages/lessons/2_String_Concatenation.md)
-3. [User Interaction with input()](/pages/lessons/3_User_Interaction_with_input)
+3. [User Interaction with input()](/pages/lessons/3_User_Interaction_with_input.md)
 4. [Variables](/pages/lessons/4_Variables.md)
 
 
